@@ -1,22 +1,9 @@
+body {
+  background-color: #fffdfb;
+}
+
 header {
   padding-top: 50px;
-}
-
-.myLocation {
-  margin: 20px 0;
-}
-
-.searchForm {
-  width: 400px;
-}
-
-.searchButton {
-  margin: 20px 0;
-}
-
-.info {
-  background-color: wheat;
-  padding: 20px;
 }
 
 h3 {
@@ -24,12 +11,32 @@ h3 {
 }
 
 h4 {
-  float: inline-end;
+  padding-bottom: 10px;
 }
 
 ul {
   list-style: none;
   padding: 0;
+}
+
+footer {
+  text-align: center;
+  font-size: small;
+}
+
+.location-button {
+  margin: 20px 0;
+  background-color: #acc6aa;
+  border-color: #acc6aa;
+}
+
+.search-form {
+  width: 200px;
+}
+
+.search-button {
+  margin: 20px 0;
+  border-radius: 3px;
 }
 
 .forecast {
@@ -39,11 +46,11 @@ ul {
 
 .day {
   padding: 10px;
-  background-color: wheat;
-  border: 5px;
+  background-color: #f2f1e7;
+  border-radius: 5px;
   margin: 10px;
 }
 
-footer {
-  text-align: center;
+.weather-app {
+  max-width: 600px;
 }

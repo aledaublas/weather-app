@@ -15,11 +15,11 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container weather-app">
       <header>
         <button
           type="button"
-          class="btn btn-primary myLocation"
+          class="btn btn-primary location-button"
           id="location-button"
         >
           My location
@@ -28,10 +28,10 @@
           <input
             type="text"
             placeholder="Enter city"
-            class="searchForm"
+            class="search-form"
             id="search-input"
           />
-          <input type="submit" value="🔎" class="searchButton" />
+          <input type="submit" value="🔎" class="search-button" />
         </form>
       </header>
 
@@ -43,11 +43,10 @@
           <a href="#" id="temp-celcius">C</a> |
           <a href="#" id="temp-fahrenheit">F</a>
         </h4>
-        <br />
         <ul>
-          <li id="description">Clear</li>
           <li id="full-date">Sunday, July 18 10:00</li>
           <li>Feels like: <span id="feels-like">19</span>°C</li>
+          <li id="description">Clear</li>
         </ul>
       </section>
 
