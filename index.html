@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <button
+          type="button"
+          class="btn btn-primary myLocation"
+          id="location-button"
+        >
+          My location
+        </button>
+        <form id="search-form" autocomplete="off">
+          <input
+            type="text"
+            placeholder="Enter city"
+            class="searchForm"
+            id="search-input"
+          />
+          <input type="submit" value="🔎" class="searchButton" />
+        </form>
+      </header>
+
+      <section class="info">
+        <h2 id="city-name">Edmonton</h2>
+        <h3 id="temperature">19</h3>
+        <h4>
+          °
+          <a href="#" id="temp-celcius">C</a> |
+          <a href="#" id="temp-fahrenheit">F</a>
+        </h4>
+        <br />
+        <ul>
+          <li id="description">Clear</li>
+          <li id="full-date">Sunday, July 18 10:00</li>
+          <li>Feels like: <span id="feels-like">19</span>°C</li>
+        </ul>
+      </section>
+
+      <section class="forecast">
+        <div class="container day">
+          <div class="row">
+            <div class="col-4">Monday</div>
+            <div class="col-4">☀️</div>
+            <div class="col-4">20 / 16</div>
+          </div>
+        </div>
+
+        <div class="container day">
+          <div class="row">
+            <div class="col-4">Tuesday</div>
+            <div class="col-4">🌤</div>
+            <div class="col-4">15 / 12</div>
+            <div class="w-100"></div>
+          </div>
+        </div>
+
+        <div class="container day">
+          <div class="row">
+            <div class="col-4">Wednesday</div>
+            <div class="col-4">☁️</div>
+            <div class="col-4">13 / 11</div>
+          </div>
+        </div>
+
+        <div class="container day">
+          <div class="row">
+            <div class="col-4">Thrusday</div>
+            <div class="col-4">☀️</div>
+            <div class="col-4">22 / 19</div>
+          </div>
+        </div>
+
+        <div class="container day">
+          <div class="row">
+            <div class="col-4">Friday</div>
+            <div class="col-4">🌧</div>
+            <div class="col-4">15 / 14</div>
+          </div>
+        </div>
+      </section>
+      <footer>Coded by Alejandra Daublas</footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

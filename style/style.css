@@ -1,0 +1,49 @@
+header {
+  padding-top: 50px;
+}
+
+.myLocation {
+  margin: 20px 0;
+}
+
+.searchForm {
+  width: 400px;
+}
+
+.searchButton {
+  margin: 20px 0;
+}
+
+.info {
+  background-color: wheat;
+  padding: 20px;
+}
+
+h3 {
+  float: left;
+}
+
+h4 {
+  float: inline-end;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.forecast {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.day {
+  padding: 10px;
+  background-color: wheat;
+  border: 5px;
+  margin: 10px;
+}
+
+footer {
+  text-align: center;
+}
