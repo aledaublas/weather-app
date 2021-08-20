@@ -36,13 +36,13 @@ currentDate.innerHTML = `${day}, ${month} ${date} ${hour}:${minutes}`;
 function toCelcius(event) {
   event.preventDefault();
   let celcius = document.querySelector("#temperature");
-  celcius.innerHTML = "19°";
+  celcius.innerHTML = "19";
 }
 
 function toFahrenheit(event) {
   event.preventDefault();
   let fahrenheit = document.querySelector("#temperature");
-  fahrenheit.innerHTML = "66°";
+  fahrenheit.innerHTML = "66";
 }
 
 //save city searched in a variable and starts search in a new function
