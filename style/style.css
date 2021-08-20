@@ -6,12 +6,18 @@ header {
   padding-top: 50px;
 }
 
+h2 {
+  font-family: "Abril Fatface", cursive;
+}
+
 h3 {
   float: left;
+  font-family: "Abril Fatface", cursive;
 }
 
 h4 {
   padding-bottom: 10px;
+  font-family: "Abril Fatface", cursive;
 }
 
 ul {
@@ -22,6 +28,11 @@ ul {
 footer {
   text-align: center;
   font-size: small;
+}
+
+.info {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 .location-button {
@@ -49,6 +60,7 @@ footer {
   background-color: #f2f1e7;
   border-radius: 5px;
   margin: 10px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .weather-app {
