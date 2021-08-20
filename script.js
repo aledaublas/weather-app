@@ -1,8 +1,6 @@
 //shows the real life date and time
 let now = new Date();
 let date = now.getDate();
-let hour = now.getHours();
-let minutes = now.getMinutes();
 let days = [
   "Sunday",
   "Monday",
@@ -30,8 +28,8 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-let currentDate = document.querySelector("#full-date");
-currentDate.innerHTML = `${day}, ${month} ${date} ${hour}:${minutes}`;
+let currentDate = document.querySelector("#date");
+currentDate.innerHTML = `${day}, ${month} ${date}`;
 
 function toCelcius(event) {
   event.preventDefault();
@@ -68,9 +66,12 @@ function displayCity(response) {
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  console.log(response);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+
+  document.querySelector("#time").innerHTML = formatTime(
+    response.data.dt * 1000
+  );
 }
 
 //function for current location button
@@ -85,7 +86,18 @@ function retrivePosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayCity);
 }
-
+// formats time
+function formatTime(timestamp) {
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hour}:${minutes}`;
+}
 //starts search process when user inputs city
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchInput);
