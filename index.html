@@ -41,21 +41,33 @@
         </form>
       </header>
 
-      <section>
-        <h2 id="city-name">Edmonton</h2>
-        <h3 id="temperature">19</h3>
-        <h4>
-          °
-          <a href="#" id="temp-celcius" class="temp">C</a> |
-          <a href="#" id="temp-fahrenheit" class="temp">F</a>
-        </h4>
-        <ul class="info">
+      <div class="info">
+        <h2 id="city-name">
+          Edmonton
+          <div class="align-right">
+            <span id="temperature">
+              19
+              <span class="unit">
+                °
+                <a href="#" id="temp-celcius" class="temp">C</a> |
+                <a href="#" id="temp-fahrenheit" class="temp">F</a>
+              </span>
+            </span>
+          </div>
+        </h2>
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+          alt="weather icon"
+          width="100"
+          class="icon-right"
+        />
+        <ul class="weather-details">
           <li id="date">Sunday, July 18</li>
           <li>Last updated: <span id="time">10:00</span></li>
           <li>Feels like: <span id="feels-like">19</span>°C</li>
           <li id="description">Clear</li>
         </ul>
-      </section>
+      </div>
 
       <section class="forecast">
         <div class="container day">
