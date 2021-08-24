@@ -59,7 +59,7 @@ function searchCity(city) {
 
 //changes html to display real time data
 function displayCity(response) {
-  document.querySelector("#temperature").innerHTML = Math.round(
+  document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector("#city-name").innerHTML = response.data.name;
