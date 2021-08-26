@@ -107,6 +107,8 @@ function formatTime(timestamp) {
   }
   return `${hour}:${minutes}`;
 }
+
+searchCity("New York");
 //starts search process when user inputs city
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchInput);
