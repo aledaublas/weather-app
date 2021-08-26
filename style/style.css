@@ -29,13 +29,12 @@ footer {
 }
 
 .location-button {
-  margin: 20px 0;
   background-color: #acc6aa;
   display: block;
   font-size: 16px;
-  padding: 10px 15px;
+  padding: 6px 15px;
   border: 1px solid #acc6aa;
-  color: #f2f2f2;
+  color: #ffffff;
   transition: all 200ms ease-in-out;
   border-radius: 5px;
 }
@@ -44,13 +43,23 @@ footer {
   opacity: 0.7;
 }
 
-.search-form {
-  width: 200px;
+.col-2 {
+  padding-left: 0px;
+}
+.search-button {
+  background-color: #295f4e;
+  display: block;
+  font-size: 16px;
+  padding: 6px 15px;
+  border: 1px solid #295f4e;
+  color: #ffffff;
+  transition: all 200ms ease-in-out;
+  border-radius: 5px;
+  opacity: 0.8;
 }
 
-.search-button {
-  margin: 20px 0;
-  border-radius: 3px;
+.search-row {
+  margin-bottom: 50px;
 }
 
 .forecast {
