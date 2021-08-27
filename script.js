@@ -70,6 +70,10 @@ function displayData(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
 
+  displayCelcius();
+}
+
+function displayCelcius() {
   fahrenheit.classList.remove("active");
   fahrenheit.classList.add("not-active");
   celcius.classList.remove("not-active");
@@ -78,10 +82,7 @@ function displayData(response) {
 
 function toCelcius(event) {
   event.preventDefault();
-  fahrenheit.classList.remove("active");
-  fahrenheit.classList.add("not-active");
-  celcius.classList.remove("not-active");
-  celcius.classList.add("active");
+  displayCelcius();
   document.querySelector("#current-temperature").innerHTML =
     Math.round(temperature);
 }
