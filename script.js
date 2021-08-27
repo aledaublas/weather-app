@@ -31,18 +31,6 @@ let month = months[now.getMonth()];
 let currentDate = document.querySelector("#date");
 currentDate.innerHTML = `${day}, ${month} ${date}`;
 
-function toCelcius(event) {
-  event.preventDefault();
-  let celcius = document.querySelector("#temperature");
-  celcius.innerHTML = "19";
-}
-
-function toFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheit = document.querySelector("#temperature");
-  fahrenheit.innerHTML = "66";
-}
-
 //save city searched in a variable and starts search in a new function
 function searchInput(event) {
   event.preventDefault();
@@ -59,9 +47,9 @@ function searchCity(city) {
 
 //changes html to display real time data
 function displayData(response) {
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  temperature = response.data.main.temp;
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(temperature);
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
@@ -81,6 +69,27 @@ function displayData(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
+}
+
+function toCelcius(event) {
+  event.preventDefault();
+  fahrenheit.classList.remove("active");
+  fahrenheit.classList.add("not-active");
+  celcius.classList.remove("not-active");
+  celcius.classList.add("active");
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(temperature);
+}
+
+function toFahrenheit(event) {
+  event.preventDefault();
+  celcius.classList.remove("active");
+  celcius.classList.add("not-active");
+  fahrenheit.classList.remove("not-active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemp = (temperature * 9) / 5 + 32;
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(fahrenheitTemp);
 }
 
 //function for current location button
@@ -108,7 +117,7 @@ function formatTime(timestamp) {
   return `${hour}:${minutes}`;
 }
 
-searchCity("New York");
+let temperature = null;
 //starts search process when user inputs city
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchInput);
@@ -122,3 +131,5 @@ fahrenheit.addEventListener("click", toFahrenheit);
 
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
+
+searchCity("New York");
