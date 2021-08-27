@@ -70,14 +70,10 @@ function displayData(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
 
-  function returnToCelcius() {
-    fahrenheit.classList.remove("active");
-    fahrenheit.classList.add("not-active");
-    celcius.classList.remove("not-active");
-    celcius.classList.add("active");
-  }
-
-  returnToCelcius();
+  fahrenheit.classList.remove("active");
+  fahrenheit.classList.add("not-active");
+  celcius.classList.remove("not-active");
+  celcius.classList.add("active");
 }
 
 function toCelcius(event) {
