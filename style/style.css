@@ -69,7 +69,11 @@ footer {
   margin: 0;
 }
 
-.day {
+.forecast-row {
+  align-items: center;
+}
+
+.container-day {
   padding: 10px;
   background-color: #f2f1e7;
   border-radius: 5px;
