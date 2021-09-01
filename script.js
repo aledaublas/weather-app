@@ -45,27 +45,7 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayData);
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = "";
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-          <div class="row forecast-row">
-            <div class="col-4">${day}</div>
-            <div class="col-4">
-              <img src="http://openweathermap.org/img/wn/01n@2x.png"
-             alt="" width="42"/></div>
-            <div class="col-4"> <pre class="forecast-temps"> <b>20°</b>  /  16°</pre></div>
-          </div>`;
-  });
-
-  forecastElement.innerHTML = forecastHTML;
-}
-
-//changes html to display real time data
+//changes html to display data
 function displayData(response) {
   temperature = response.data.main.temp;
   document.querySelector("#current-temperature").innerHTML =
@@ -91,6 +71,34 @@ function displayData(response) {
     .setAttribute("alt", response.data.weather[0].main);
 
   displayCelcius();
+  getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+  let apiKey = "d130217ec0baefbb5c62f20058666bef";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="row forecast-row">
+            <div class="col-4">${day}</div>
+            <div class="col-4">
+              <img src="http://openweathermap.org/img/wn/01n@2x.png"
+             alt="" width="42"/></div>
+            <div class="col-4"> <pre class="forecast-temps"> <b>20°</b>  /  16°</pre></div>
+          </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayCelcius() {
@@ -159,4 +167,3 @@ let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
 searchCity("New York");
-displayForecast();
