@@ -73,12 +73,18 @@ footer {
   align-items: center;
 }
 
-.container-day {
+.day-forecast {
   padding: 10px;
   background-color: #f2f1e7;
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
+}
+
+.forecast-temps {
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
 }
 
 .weather-app {
