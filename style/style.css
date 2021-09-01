@@ -71,13 +71,14 @@ footer {
 
 .forecast-row {
   align-items: center;
+  margin-bottom: 10px;
+  background-color: #f2f1e7;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .day-forecast {
-  padding: 10px;
-  background-color: #f2f1e7;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  background-color: white;
   font-family: "Montserrat", sans-serif;
 }
 
