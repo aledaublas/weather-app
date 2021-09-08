@@ -81,24 +81,42 @@ function getForecast(coordinates) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
+      forecastHTML += `
           <div class="row forecast-row">
-            <div class="col-4">${day}</div>
+            <div class="col-4">${formatForecastDays(forecastDay.dt)}</div>
             <div class="col-4">
-              <img src="http://openweathermap.org/img/wn/01n@2x.png"
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
              alt="" width="42"/></div>
-            <div class="col-4"> <pre class="forecast-temps"> <b>20°</b>  /  16°</pre></div>
+            <div class="col-4"> <pre class="forecast-temps"> <b>${Math.round(
+              forecastDay.temp.max
+            )}°</b>  /  ${Math.round(forecastDay.temp.min)}°</pre></div>
           </div>`;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
+}
+
+function formatForecastDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
 }
 
 function displayCelcius() {
