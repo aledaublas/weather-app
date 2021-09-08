@@ -92,23 +92,6 @@ footer {
   max-width: 600px;
 }
 
-.active {
-  color: black;
-}
-
-.active:hover {
-  text-decoration: none;
-  color: black;
-}
-.not-active {
-  color: gray;
-}
-
-.not-active:hover {
-  text-decoration: none;
-  color: gray;
-}
-
 .unit {
   font-size: smaller;
 }

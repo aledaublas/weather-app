@@ -70,7 +70,6 @@ function displayData(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
 
-  displayCelcius();
   getForecast(response.data.coord);
 }
 
@@ -119,31 +118,6 @@ function formatForecastDays(timestamp) {
   return days[day];
 }
 
-function displayCelcius() {
-  fahrenheit.classList.remove("active");
-  fahrenheit.classList.add("not-active");
-  celcius.classList.remove("not-active");
-  celcius.classList.add("active");
-}
-
-function toCelcius(event) {
-  event.preventDefault();
-  displayCelcius();
-  document.querySelector("#current-temperature").innerHTML =
-    Math.round(temperature);
-}
-
-function toFahrenheit(event) {
-  event.preventDefault();
-  celcius.classList.remove("active");
-  celcius.classList.add("not-active");
-  fahrenheit.classList.remove("not-active");
-  fahrenheit.classList.add("active");
-  let fahrenheitTemp = (temperature * 9) / 5 + 32;
-  document.querySelector("#current-temperature").innerHTML =
-    Math.round(fahrenheitTemp);
-}
-
 //function for current location button
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(retrivePosition);
@@ -173,13 +147,6 @@ let temperature = null;
 //starts search process when user inputs city
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchInput);
-
-// changes temp to celcius or fahrenheit
-let celcius = document.querySelector("#temp-celcius");
-celcius.addEventListener("click", toCelcius);
-
-let fahrenheit = document.querySelector("#temp-fahrenheit");
-fahrenheit.addEventListener("click", toFahrenheit);
 
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
